@@ -1,45 +1,25 @@
-= rails-sh
+= lokka-sh
 
-rails-sh is a mini shell for rails3 that provides a uniform and quick access to commands.
+lokka-sh is a mini shell for CMS Lokka that provides a uniform and quick access to commands.
 
 == Install
 
-  $ gem install rails-sh
+  $ gem install lokka-sh
 
 == Usage
 
-  $ cd your-rails3-app
-  $ rails-sh
-
-You can specify an environment as follows:
-
-  $ rails-sh test
+  $ cd your-lokka-app
+  $ lokka-sh
 
 == Examples
 
 Execute rake task:
 
-  rails> rake db:migrate
-
-Generate a controller:
-
-  rails> rails generate controller foo bar
-  $ rails g controller foo bar
-        create  app/controllers/foo_controller.rb
-         route  get "foo/bar"
-        invoke  erb
-        create    app/views/foo
-        create    app/views/foo/bar.html.erb
-        invoke  test_unit
-        create    test/functional/foo_controller_test.rb
-        invoke  helper
-        create    app/helpers/foo_helper.rb
-        invoke    test_unit
-        create      test/unit/helpers/foo_helper_test.rb
+  lokka> rake db:migrate
 
 Run console:
 
-  rails> console
+  lokka> lokka console
 
 == Commands
 
@@ -47,19 +27,19 @@ please type help
 
 == Configuration
 
-rails-sh will try to load '~/railsshrc' as configuration.
+lokka-sh will try to load '~/lokkashrc' as configuration.
 
 Example:
 
-  # ~/railsshrc
-  Rails::Sh::Command.define 'my_command' do |arg|
+  # ~/lokkashrc
+  Lokka::Sh::Command.define 'my_command' do |arg|
     puts "Execute my_command with arg(`#{arg}`)!"
   end
 
 == TODO
 
-== Contributing to rails-sh
- 
+== Contributing to lokka-sh
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -70,4 +50,4 @@ Example:
 
 == Copyright
 
-Copyright (c) 2011 jugyo. See LICENSE.txt for further details.
+Copyright (c) 2012 daichi. See LICENSE.txt for further details.
