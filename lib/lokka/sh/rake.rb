@@ -1,7 +1,7 @@
 require 'rake'
 require 'stringio'
 
-module Rails
+module Lokka
   module Sh
     module Rake
       extend Forkable
@@ -11,16 +11,13 @@ module Rails
           $stdout = StringIO.new
 
           before_fork do
-            ActiveRecord::Base.remove_connection if defined?(ActiveRecord::Base)
           end
           after_fork do
-            ActiveRecord::Base.establish_connection if defined?(ActiveRecord::Base)
           end
 
           ::Rake.application = ::Rake::Application.new
           ::Rake.application.init
           ::Rake.application.load_rakefile
-          ::Rake.application[:environment].invoke
         ensure
           $stdout = STDOUT
         end

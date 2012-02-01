@@ -12,13 +12,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "rails-sh"
-  gem.homepage = "http://github.com/jugyo/rails-sh"
+  gem.name = "lokka-sh"
+  gem.homepage = "http://github.com/daic-h/lokka-sh"
   gem.license = "MIT"
-  gem.summary = %Q{The Rails Shell}
-  gem.description = %Q{The Rails Shell to execute sub commands of rails quickly.}
-  gem.email = "jugyo.org@gmail.com"
-  gem.authors = ["jugyo"]
+  gem.summary = %Q{The Lokka Shell}
+  gem.description = %Q{The Lokka Shell to execute sub commands of rails quickly.}
+  gem.email = "bunny.hop.md@gmail.com"
+  gem.authors = ["Daichi"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'

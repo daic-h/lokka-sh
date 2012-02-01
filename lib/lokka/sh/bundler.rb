@@ -1,8 +1,8 @@
-module Rails
+module Lokka
   module Sh
     module Bundler
       extend Forkable
-      
+
       class << self
         def _invoke(line)
           line ||= 'install'

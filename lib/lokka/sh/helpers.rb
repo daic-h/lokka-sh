@@ -1,4 +1,4 @@
-module Rails
+module Lokka
   module Sh
     module Helpers
       # copy from pry: https://github.com/pry/pry

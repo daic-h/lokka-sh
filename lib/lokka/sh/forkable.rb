@@ -1,28 +1,13 @@
-require 'stringio'
-
-module Rails
+module Lokka
   module Sh
     module Forkable
-      include Rails::Sh::Helpers
+      include Lokka::Sh::Helpers
 
       def invoke(line, options = {})
         run_before_fork
         pid = fork do
           run_after_fork
-
-          if options[:pager]
-            begin
-              $stdout = StringIO.new
-              _invoke(line)
-            ensure
-              output = $stdout.string
-              lesspipe output
-              $stdout = STDOUT
-            end
-          else
-            _invoke(line)
-          end
-
+          _invoke(line)
         end
         Process.waitpid(pid)
       end

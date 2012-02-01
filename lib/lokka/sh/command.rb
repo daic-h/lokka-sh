@@ -1,4 +1,4 @@
-module Rails
+module Lokka
   module Sh
     module Command
       class << self
