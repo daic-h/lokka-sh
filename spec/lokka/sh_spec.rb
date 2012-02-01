@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Rails::Sh do
+describe Lokka::Sh do
   pending
 end
