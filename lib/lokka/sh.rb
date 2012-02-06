@@ -14,7 +14,7 @@ module Lokka
         ::Lokka::Sh::Rake.init
 
         require 'lokka/sh/commands'
-        begin; load "./lokkashrc"; rescue LoadError; end
+        begin; load "#{::Lokka.root}/.lokkashrc"; rescue LoadError; end
       end
 
       def start
