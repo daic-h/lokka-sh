@@ -1,5 +1,3 @@
-require 'irb'
-
 module Lokka
   module Sh
     module Sinatra
@@ -16,9 +14,10 @@ module Lokka
         def _invoke(line)
           case line
           when "console"
+            require 'irb'
             IRB.start(Lokka.root)
           else
-
+            raise
           end
         end
 

@@ -1,6 +1,3 @@
-require 'rake'
-require 'stringio'
-
 module Lokka
   module Sh
     module Rake
