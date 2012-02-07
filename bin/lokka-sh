@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-lib = File.expand_path(File.dirname(__FILE__) + '/../../lib')
+lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
 $:.unshift(lib) if File.directory?(lib) && !$:.include?(lib)
 
 require 'lokka/sh'
