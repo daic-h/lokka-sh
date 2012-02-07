@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
-$:.unshift File.expand_path('../../lib', __FILE__)
+lib = File.expand_path(File.dirname(__FILE__) + '/../../lib')
+$:.unshift(lib) if File.directory?(lib) && !$:.include?(lib)
+
 require 'lokka/sh'
 
 puts <<BANNER.gsub("%", "\e[46m \e[0m")

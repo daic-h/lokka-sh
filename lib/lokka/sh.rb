@@ -17,13 +17,19 @@ module Lokka
 
     def self.start
       Color.with(:cyan) { "Lokka.env: #{::Lokka.env}\n`help` to print help" }
+      add_load_path
       Rake.init
       load_commands
       Prompt.invoke
     end
 
+    def self.add_load_path
+      lib = File.expand_path(File.dirname(__FILE__) + '/../../lib')
+      $:.unshift(lib) if File.directory?(lib) && !$:.include?(lib)
+    end
+
     def self.load_commands
-      require 'lokka/sh/commands'
+      require "lokka/sh/commands"
       lokkashrc = "#{::Lokka.root}/.lokkashrc"
       load lokkashrc
       Color.with(:blue) {"load #{lokkashrc}"}
@@ -31,3 +37,4 @@ module Lokka
     end
   end
 end
+
