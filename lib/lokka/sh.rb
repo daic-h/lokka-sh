@@ -1,4 +1,5 @@
 require 'readline'
+require 'lokka/sh/version'
 require 'lokka/sh/color'
 require 'lokka/sh/helpers'
 require 'lokka/sh/forkable'

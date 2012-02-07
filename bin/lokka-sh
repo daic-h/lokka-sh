@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
+$:.unshift File.expand_path('../../lib', __FILE__)
+require 'lokka/sh'
 
-version = 'v' + File.read(File.expand_path('../../VERSION', __FILE__))
 puts <<BANNER.gsub("%", "\e[46m \e[0m")
 
 .%%......%%%%%%..%%..%%..%%..%%...%%%%............%%%%...%%..%%.
@@ -9,7 +10,7 @@ puts <<BANNER.gsub("%", "\e[46m \e[0m")
 .%%......%%..%%..%%.%%...%%.%%...%%..%%..............%%..%%..%%.
 .%%%%%%..%%%%%%..%%..%%..%%..%%..%%..%%...........%%%%...%%..%%.
 ................................................................
-\e[35m#{version.rjust(63, " ")}\e[0m
+\e[35m#{Lokka::Sh::VERSION.rjust(63, " ")}\e[0m
 
 BANNER
 
@@ -17,6 +18,4 @@ APP_PATH = File.expand_path('./init')
 puts "\e[34m# require #{APP_PATH}\e[0m"
 require APP_PATH
 
-$:.unshift File.expand_path('../../lib', __FILE__)
-require 'lokka/sh'
 Lokka::Sh.start
