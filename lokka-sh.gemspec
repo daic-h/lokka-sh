@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Dach_h"]
   s.email       = ["bunny.hop.md@gmail.com"]
   s.homepage    = ""
-  s.summary     = "excute sub commands of rails quickly."
+  s.summary     = "excute sub commands of lokka quickly."
   s.description = s.summary
   s.rubyforge_project = "lokka-sh"
   s.files         = `git ls-files`.split("\n")
