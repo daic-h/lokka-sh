@@ -42,9 +42,7 @@ Example:
 
 ## Acknowledge
 
-This library was allowed to fork jugyo/rails-sh.
-
-It is gratitude to Mr.jugyo who exhibited the wonderful library.
+This library is fork of jugyo/rails-sh.
 
 ## Copyright
 
