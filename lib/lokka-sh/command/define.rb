@@ -1,17 +1,18 @@
 module LokkaSh::Command
   define 'help' do
     LokkaSh::Color.with(:blue) do
-      <<HELP
-help             -> print help
-console          -> starting console
-rake TASK        -> execute rake task
-tasks PATTERN    -> print rake tasks
-bundle           -> execute bundler command
-exit             -> exit from lokka-sh
-restart          -> restart lokka-sh
-!                -> execute a system command
-eval             -> eval as ruby script
-HELP
+      <<-HELP.gsub(/^ {6}/, '')
+
+        help             -> print help
+        console          -> starting console
+        rake TASK        -> execute rake task
+        tasks PATTERN    -> print rake tasks
+        bundle           -> execute bundler command
+        exit             -> exit from lokka-sh
+        restart          -> restart lokka-sh
+        !                -> execute a system command
+        eval             -> eval as ruby script
+      HELP
     end
   end
 
