@@ -1,3 +1,6 @@
+lib = File.expand_path(File.dirname(__FILE__) + '/../../lib')
+$:.unshift(lib) if File.directory?(lib) && !$:.include?(lib)
+
 require 'readline'
 require 'stringio'
 require 'rake/dsl_definition'
@@ -16,16 +19,13 @@ module Lokka
     autoload :Bundler,  "lokka/sh/bundler"
 
     def self.start
-      Color.with(:cyan) { "Lokka.env: #{::Lokka.env}\n`help` to print help" }
-      add_load_path
+      Color.with(:cyan) do
+        "Lokka.env: #{::Lokka.env}\n`help` to print help"
+      end
+
       Rake.init
       load_commands
       Prompt.invoke
-    end
-
-    def self.add_load_path
-      lib = File.expand_path(File.dirname(__FILE__) + '/../../lib')
-      $:.unshift(lib) if File.directory?(lib) && !$:.include?(lib)
     end
 
     def self.load_commands
