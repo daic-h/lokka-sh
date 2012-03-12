@@ -10,12 +10,12 @@ puts <<BANNER.gsub("%", "\e[46m \e[0m")
 .%%......%%..%%..%%.%%...%%.%%...%%..%%..............%%..%%..%%.
 .%%%%%%..%%%%%%..%%..%%..%%..%%..%%..%%...........%%%%...%%..%%.
 ................................................................
-\e[35m#{Lokka::Sh::VERSION.rjust(63, " ")}\e[0m
+\e[35m#{LokkaSh::VERSION.rjust(63, " ")}\e[0m
 
 BANNER
 
 APP_PATH = File.expand_path('./init')
-Lokka::Sh::Color.with(:blue) do
+LokkaSh::Color.with(:blue) do
   "require #{APP_PATH}"
 end
 require APP_PATH

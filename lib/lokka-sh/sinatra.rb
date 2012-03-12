@@ -4,10 +4,6 @@ module LokkaSh
 
     class << self
       def init
-        before_fork do
-        end
-        after_fork do
-        end
       end
 
       def _invoke(line)
