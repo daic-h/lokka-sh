@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
-lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
-$:.unshift(lib) if File.directory?(lib) && !$:.include?(lib)
-
-require 'lokka/sh'
+$:.unshift File.expand_path(File.dirname(__FILE__) + '/../lib')
+require 'lokka-sh'
 
 puts <<BANNER.gsub("%", "\e[46m \e[0m")
 
@@ -20,6 +18,6 @@ APP_PATH = File.expand_path('./init')
 Lokka::Sh::Color.with(:blue) do
   "require #{APP_PATH}"
 end
-
 require APP_PATH
-Lokka::Sh.start
+
+LokkaSh::CLI.run
