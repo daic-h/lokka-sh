@@ -1,7 +1,6 @@
-module Lokka
-  module Sh
-    module Prompt
-      extend self
+module LokkaSh
+  module Prompt
+    class << self
 
       def invoke
         setup_readline
@@ -14,7 +13,7 @@ module Lokka
           rescue SystemExit
             raise
           rescue Exception => e
-            Lokka::Sh::Color.with(:bg_red) { "#{e.message}\n#{e.backtrace.join("\n")}" }
+            LokkaSh::Color.with(:bg_red) { "#{e.message}\n#{e.backtrace.join("\n")}" }
           end
         end
 
@@ -27,19 +26,20 @@ module Lokka
 
       def setup_readline
         Readline.basic_word_break_characters = ""
-        Readline.completion_proc = Lokka::Sh::Command.completion_proc
+        Readline.completion_proc = LokkaSh::Command.completion_proc
       end
 
       def execute(line)
-        if command = Lokka::Sh::Command.find(line)
+        if command = LokkaSh::Command.find(line)
           start = Time.now
           arg = line.split(/\s+/, 2)[1] rescue nil
           command.call(arg)
-          Lokka::Sh::Color.with(:blue) { "#{Time.now - start}sec" }
+          LokkaSh::Color.with(:blue) { "#{Time.now - start}sec" }
         else
-          Lokka::Sh::Color.with(:bg_red) { "Command not found" }
+          LokkaSh::Color.with(:bg_red) { "Command not found" }
         end
       end
+
     end
   end
 end

@@ -17,7 +17,9 @@ puts <<BANNER.gsub("%", "\e[46m \e[0m")
 BANNER
 
 APP_PATH = File.expand_path('./init')
-Lokka::Sh::Color.with(:blue) { "require #{APP_PATH}" }
-require APP_PATH
+Lokka::Sh::Color.with(:blue) do
+  "require #{APP_PATH}"
+end
 
+require APP_PATH
 Lokka::Sh.start

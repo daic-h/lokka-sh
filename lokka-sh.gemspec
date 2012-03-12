@@ -1,9 +1,9 @@
-$:.push File.expand_path("../lib", __FILE__)
-require "lokka/sh/version"
+$:.unshift File.expand_path(File.dirname(__FILE__) + "/lib")
+require "lokka-sh/version"
 
 Gem::Specification.new do |s|
   s.name        = "lokka-sh"
-  s.version     = Lokka::Sh::VERSION
+  s.version     = LokkaSh::VERSION
   s.authors     = ["Dach_h"]
   s.email       = ["bunny.hop.md@gmail.com"]
   s.homepage    = ""
@@ -15,9 +15,10 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency 'rake',    '>= 0.9.2'
-  s.add_development_dependency 'rspec',   '>= 2.7.0'
-  s.add_development_dependency 'bundler', '~> 1.0.0'
+  s.add_dependency 'rake',     '0.9.2'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'bundler'
 end
 
 
